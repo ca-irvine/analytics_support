@@ -80,4 +80,4 @@ Android|iOS
 
 ## License
 
-Playbook is released under the [BSD-3-Clause License](./LICENSE).
+analytics_support is released under the [BSD-3-Clause License](./LICENSE).
