@@ -12,8 +12,8 @@ Pod::Spec.new do |s|
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
-  s.dependency 'GoogleTagManager', '~> 7.4'
-  s.platform = :ios, '9.0'
+  s.dependency 'GoogleTagManager', '~> 8.1'
+  s.platform = :ios, '15.0'
   s.static_framework = true
 
   # Flutter.framework does not contain a i386 slice.
