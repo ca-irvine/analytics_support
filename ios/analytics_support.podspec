@@ -13,6 +13,7 @@ Pod::Spec.new do |s|
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
   s.dependency 'GoogleTagManager', '~> 8.1'
+  s.dependency 'Firebase/Analytics'
   s.platform = :ios, '15.0'
   s.static_framework = true
 

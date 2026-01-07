@@ -1,5 +1,6 @@
 import Flutter
-import GoogleAnalytics
+import FirebaseAnalytics
+import GoogleTagManager
 import UIKit
 
 public class SwiftAnalyticsSupportPlugin: NSObject, FlutterPlugin {
@@ -28,8 +29,9 @@ public class SwiftAnalyticsSupportPlugin: NSObject, FlutterPlugin {
     }
 
     public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
-        if call.method == TrackerMethod.getGoogleClientId.rawValue, let trackingId = call.arguments as? String {
-            result(trackingId.isEmpty ? nil : GAI.sharedInstance().tracker(withTrackingId: trackingId).get(kGAIClientId))
+        if call.method == TrackerMethod.getGoogleClientId.rawValue {
+            // Firebase Analytics の App Instance ID を取得
+            result(Analytics.appInstanceID())
         } else if call.method == TrackerMethod.showConsoleLog.rawValue, let show = call.arguments as? NSNumber {
             TAGLoggerSupport.consoleLogIsShow(Bool(truncating: show))
             result(nil)
